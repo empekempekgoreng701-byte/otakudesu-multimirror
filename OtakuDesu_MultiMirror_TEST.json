@@ -1,0 +1,59 @@
+{
+  "api": "9",
+  "type": "anime",
+  "name": "OtakuDesu Multi-Mirror TEST",
+  "version": "0.1",
+  "muliSources": true,
+  "useWebview": true,
+  "useNativePlayer": true,
+  "usePost": false,
+  "useLegacyParser": false,
+  "adBlocker": false,
+  "userAgent": "Mozilla/5.0 (Linux; Android 15; Mobile)",
+  "baseURL": "https://otakudesu.blog/",
+  "searchURL": "",
+  "searchList": "",
+  "searchName": "",
+  "searchResult": "",
+  "chapterRoads": "",
+  "chapterResult": "",
+  "referer": "",
+  "searchMode": "api",
+  "chapterMode": "api",
+  "searchApiConfig": {
+    "request": {
+      "method": "GET",
+      "url": "https://otakudesu-api-jade.vercel.app/api/search/@keyword",
+      "headers": {},
+      "query": {}
+    },
+    "listPath": "$.search_results[*]",
+    "namePath": "$.title",
+    "sourcePath": "$.endpoint"
+  },
+  "chapterApiConfig": {
+    "request": {
+      "method": "GET",
+      "url": "https://GANTI-DENGAN-PROJECT-VERCEL-ANDA.vercel.app/api/resolve",
+      "query": {
+        "episode": "@source"
+      }
+    },
+    "format": "nested",
+    "roadsPath": "$.roads[*]",
+    "roadNamePath": "$.name",
+    "episodesPath": "$.episodes[*]",
+    "episodeNamePath": "$.name",
+    "episodeUrlPath": "$.url"
+  },
+  "antiCrawlerConfig": {
+    "enabled": false,
+    "captchaType": 1,
+    "captchaImage": "",
+    "captchaInput": "",
+    "captchaButton": "",
+    "captchaDetectType": 1,
+    "captchaDetectValue": "",
+    "captchaScript": ""
+  }
+}
